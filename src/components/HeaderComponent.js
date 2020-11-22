@@ -31,7 +31,7 @@ class Header extends Component {
     render() {
         return(
             <React.Fragment>
-                <Jumbotron fluid>
+                <Jumbotron id="headerJumbo" fluid>
                     <div className="container">
                         <div className="row">
                             <div className="column">
@@ -43,8 +43,6 @@ class Header extends Component {
                 </Jumbotron>
                 <Navbar color="light" sticky="top" expand="md">
                     <div className="container">
-                        <NavbarBrand className="mr-auto" href="/" img src={require('../images/divTheCat.PNG')} height="30" width="30"
-                        alt="Y-City Kitty logo">Y-City Kitty</NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav} />
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>

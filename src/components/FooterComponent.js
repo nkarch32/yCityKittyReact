@@ -12,7 +12,6 @@ function Footer(props) {
                     <h5>Hours</h5>
                     <p>Cat Lounge: 12 pm - 5 pm</p>
                     <p>Dining Room: 9 am - 5 pm</p>
-                    <p>Header CTA?</p>
                     </div>
                     <hr className="clearfix w-100 d-md-none pb-3" />
                     <div className="col-md-3 mb-md-0 mb-3">
