@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input, Col } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Col} from 'reactstrap';
 
 class Contact extends Component {
 
@@ -9,10 +9,10 @@ class Contact extends Component {
         this.state = {
             firstName: '',
             lastName: '',
-            tel: '',
+            phone: '',
             email: '',
             contactReason: '',
-            feedback: ''
+            message: ''
 
         };
 
@@ -22,7 +22,7 @@ class Contact extends Component {
     }
 
 
-    handleImputChange(event) {
+    handleInputChange(event) {
         const target = event.target;
         const name = target.name;
         const value = target.type === 'select' ? target.option : target.value;
@@ -43,6 +43,76 @@ class Contact extends Component {
         return(
             <div className="container">
                 <div className="row">
+                    <div className="col-12">
+                        <h2>Contact Us</h2>
+                        <hr />
+                    </div>
+                <div className="col-md-10">
+                    <Form onSubmit={this.handleSubmit}>
+                        <FormGroup row>
+                            <Label htmlFor="firstName" md={2}>First Name</Label>
+                            <Col md={10}>
+                                <Input type="text" id="firstName" name="firstName"
+                                placeholder="First Name"
+                                value={this.state.firstName}
+                                onChange={this.handleInputChange} />
+                            </Col>
+                        </FormGroup>
+                        <FormGroup row>
+                            <Label htmlFor="lastName" md={2}>Last Name</Label>
+                                <Col md={10}>
+                                    <Input type="text" id="lastName" name="lastName"
+                                    placeholder="Last Name"
+                                    value={this.state.lastName}
+                                    onChange={this.handleInputChange} />
+                                </Col>
+                        </FormGroup>
+                        <FormGroup row>
+                            <Label htmlFor="phone" md={2}>Phone</Label>
+                                <Col md={10}>
+                                    <Input type="tel" id="phone" name="phone"
+                                    placeholder="Phone Number"
+                                    value={this.state.phone}
+                                    onChange={this.handleInputChange} />
+                                </Col>
+                        </FormGroup>
+                        <FormGroup row>
+                            <Label htmlFor="email" md={2}>Email</Label>
+                                <Col md={10}>
+                                    <Input type="email" id="email" name="email"
+                                    placeholder="Email"
+                                    value={this.state.email}
+                                    onChange={this.handleInputChange} />
+                                </Col>
+                        </FormGroup>
+                        <FormGroup row>
+                            <Label htmlFor="contactReason" md={2}>Why are you contacting us today?</Label>
+                                <Col md={10}>
+                                        <Input type="select" id="contactReason" name="contactReason"
+                                        value={this.state.contactReason}
+                                        onChange={this.handleInputChange}>
+                                            <option>Cats</option>
+                                            <option>Coffee</option>
+                                    </Input>    
+                                </Col>
+                        </FormGroup>
+                        <FormGroup row>
+                            <Label htmlFor="message" md={2}>Your Message</Label>
+                                <Col md={10}>
+                                    <Input type="textarea" id="message" name="message"
+                                    value={this.state.message}
+                                    onChange={this.handleInputChange} />
+                                </Col>
+                        </FormGroup>
+                        <FormGroup row>
+                                <Col md={{size: 10, offset: 2}}>
+                                    <Button type="submit" color="primary">
+                                        Send Message
+                                    </Button>
+                                </Col>
+                            </FormGroup>
+                    </Form>
+                </div>
 
                 </div>
             </div>

@@ -9,12 +9,13 @@ class Header extends Component {
         this.state = {
             isNavOpen: false,
             isModalOpen: false
-        }
+        };
 
         this.toggleNav = this.toggleNav.bind(this);
         this.toggleModal = this.toggleModal.bind(this);
+       
 
-    }; //part one of the component -- props, state data, any this bindings for functions later on in the component -- is finished
+    } //part one of the component -- props, state data, any this bindings for functions later on in the component -- is finished
 
     toggleNav() {
         this.setState({
@@ -41,9 +42,9 @@ class Header extends Component {
                         </div>
                     </div>
                 </Jumbotron>
-                <Navbar color="light" sticky="top" expand="md">
+                <Navbar color="dark" sticky="top" expand="sm">
                     <div className="container">
-                        <NavbarToggler onClick={this.toggleNav} />
+                        <NavbarToggler className="navbarCustom" onClick={this.toggleNav} />
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
                                 <NavItem>
@@ -56,7 +57,7 @@ class Header extends Component {
                                     <NavLink className="nav-link" to="/">Meet the Kitties</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink className="nav-link" to="/">Contact Us</NavLink>
+                                    <NavLink className="nav-link" to="/contact">Contact Us</NavLink>
                                 </NavItem>
                             </Nav>
                         </Collapse>
