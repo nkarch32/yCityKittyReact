@@ -22,7 +22,7 @@
 }
 
 #heroIndex {
-  background: url("../../ycitykitty/src/images/cctwocats.jpg") repeat center fixed;
+  background: url("../src/images/cctwocats.jpg") repeat center fixed;
   margin-bottom: 0px;
   height: 300px;
 }
@@ -31,8 +31,16 @@
   background-color: rgb(223, 11, 92);
   padding: 10px 50px;
 }
+#contactjumbo {
+  background: url("../src/images/mailbox.jpg") center fixed;
+  height: 300px;
+}
 
-h2 {
+#menujumbo {
+  background: url("../src/images/coffeeandcake.jpg") center fixed;
+  height: 300px;
+}
+/*h2 {
   font-family: 'Itim', cursive;
   text-shadow: 
   -1px -1px 0 #000,
@@ -41,7 +49,9 @@ h2 {
   1px 1px 0 #000;
 }
 
-
+.contactCard {
+  margin: 50 px;
+}
 /*.catCardPicture {
   background-image: url(./images/Green-eyes-cat-closeup.jpg);
 } */

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form, FormGroup, Label, Input, Col, FormFeedback} from 'reactstrap';
+import { Button, Card, CardTitle, CardBody, CardFooter, CardText, Form, FormGroup, Jumbotron, Label, Input, Col, FormFeedback } from 'reactstrap';
 
 class Contact extends Component {
 
@@ -91,93 +91,118 @@ class Contact extends Component {
         const errors = this.validate(this.state.firstName, this.state.lastName, this.state.phone, this.state.email);
 
         return(
-            <div className="container">
-                <div className="row">
-                    <div className="col-12">
-                        <h2>Contact Us</h2>
-                        <hr />
-                    </div>
-                <div className="col-md-10">
-                    <Form onSubmit={this.handleSubmit}>
-                        <FormGroup row>
-                            <Label htmlFor="firstName" md={2}>First Name</Label>
-                            <Col md={10}>
-                                <Input type="text" id="firstName" name="firstName"
-                                placeholder="First Name"
-                                value={this.state.firstName}
-                                invalid={errors.firstName}
-                                onBlur={this.handleBlur("firstName")}
-                                onChange={this.handleInputChange} />
-                            <FormFeedback>{errors.firstName}</FormFeedback>
-                            </Col>
-                        </FormGroup>
-                        <FormGroup row>
-                            <Label htmlFor="lastName" md={2}>Last Name</Label>
-                                <Col md={10}>
-                                    <Input type="text" id="lastName" name="lastName"
-                                    placeholder="Last Name"
-                                    value={this.state.lastName}
-                                    invalid={errors.firstName}
-                                    onBlur={this.handleBlur("lastName")}
-                                    onChange={this.handleInputChange} />
-                                <FormFeedback>{errors.lastName}</FormFeedback>
-                                </Col>
-                        </FormGroup>
-                        <FormGroup row>
-                            <Label htmlFor="phone" md={2}>Phone</Label>
-                                <Col md={10}>
-                                    <Input type="tel" id="phone" name="phone"
-                                    placeholder="Phone Number"
-                                    value={this.state.phone}
-                                    invalid={this.state.phone}
-                                    onBlur={this.handleBlur("phone")}
-                                    onChange={this.handleInputChange} />
-                                <FormFeedback>{errors.phone}</FormFeedback>
-                                </Col>
-                        </FormGroup>
-                        <FormGroup row>
-                            <Label htmlFor="email" md={2}>Email</Label>
-                                <Col md={10}>
-                                    <Input type="email" id="email" name="email"
-                                    placeholder="Email"
-                                    value={this.state.email}
-                                    invalid={this.state.email}
-                                    onBlur={this.handleBlur("email")}
-                                    onChange={this.handleInputChange} />
-                                <FormFeedback>{errors.email}</FormFeedback>
-                                </Col>
-                        </FormGroup>
-                        <FormGroup row>
-                            <Label htmlFor="contactReason" md={2}>Why are you contacting us today?</Label>
-                                <Col md={10}>
-                                        <Input type="select" id="contactReason" name="contactReason"
-                                        value={this.state.contactReason}
-                                        onChange={this.handleInputChange}>
-                                            <option>Cats</option>
-                                            <option>Coffee</option>
-                                    </Input>    
-                                </Col>
-                        </FormGroup>
-                        <FormGroup row>
-                            <Label htmlFor="message" md={2}>Your Message</Label>
-                                <Col md={10}>
-                                    <Input type="textarea" id="message" name="message"
-                                    value={this.state.message}
-                                    onChange={this.handleInputChange} />
-                                </Col>
-                        </FormGroup>
-                        <FormGroup row>
-                                <Col md={{size: 10, offset: 2}}>
-                                    <Button type="submit" color="primary">
-                                        Send Message
-                                    </Button>
-                                </Col>
-                        </FormGroup>
-                    </Form>
-                </div>
+            <React.Fragment>
+                <Jumbotron fluid id="contactjumbo">
+                        <div className="container text-center">
+                            <h2 className="text-white text-shadow">Zanesville, Ohio's First and Finest Cat Cafe</h2>
+                        </div>
+                </Jumbotron>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-6">
+                            <Card className="mt-5">
+                                <CardBody>
+                                    <CardTitle tag="h2"> Talk to Us</CardTitle>
+                                        <CardText>
+                                            <i className="fa fa-phone fa-lg fa-fw" /> (740) 123-4567 <br />
+                                            <i className="fa fa-envelope fa-lg fa-fw" /> <a href="mailto: email.mail" className="text-dark"> Email Us </a> <br />
+                                            <i className="fa fa-map fa-lg fa-fw" /> 123 Linden Ave  Zanesville, OH 43701
+                                        </CardText>
+                                </CardBody>
+                            </Card>
 
+                            <Card className="blockquote mt-5">
+                                <CardBody>What greater gift than the love of a cat.</CardBody>
+                                <CardFooter className="blockquote-footer">Charles Dickens</CardFooter>
+                            </Card>
+                        </div>
+
+                        <div className="col-lg-6 mt-5">
+                            <h2>Contact Us</h2>
+                            <hr />
+                        
+                            <div className="col-md-10">
+                                <Form onSubmit={this.handleSubmit}>
+                                    <FormGroup row>
+                                        <Label htmlFor="firstName" md={2}>First Name</Label>
+                                        <Col md={10}>
+                                            <Input type="text" id="firstName" name="firstName"
+                                            placeholder="First Name"
+                                            value={this.state.firstName}
+                                            invalid={errors.firstName}
+                                            onBlur={this.handleBlur("firstName")}
+                                            onChange={this.handleInputChange} />
+                                        <FormFeedback>{errors.firstName}</FormFeedback>
+                                        </Col>
+                                    </FormGroup>
+                                    <FormGroup row>
+                                        <Label htmlFor="lastName" md={2}>Last Name</Label>
+                                            <Col md={10}>
+                                                <Input type="text" id="lastName" name="lastName"
+                                                placeholder="Last Name"
+                                                value={this.state.lastName}
+                                                invalid={errors.firstName}
+                                                onBlur={this.handleBlur("lastName")}
+                                                onChange={this.handleInputChange} />
+                                            <FormFeedback>{errors.lastName}</FormFeedback>
+                                            </Col>
+                                    </FormGroup>
+                                    <FormGroup row>
+                                        <Label htmlFor="phone" md={2}>Phone</Label>
+                                            <Col md={10}>
+                                                <Input type="tel" id="phone" name="phone"
+                                                placeholder="Phone Number"
+                                                value={this.state.phone}
+                                                invalid={this.state.phone}
+                                                onBlur={this.handleBlur("phone")}
+                                                onChange={this.handleInputChange} />
+                                            <FormFeedback>{errors.phone}</FormFeedback>
+                                            </Col>
+                                    </FormGroup>
+                                    <FormGroup row>
+                                        <Label htmlFor="email" md={2}>Email</Label>
+                                            <Col md={10}>
+                                                <Input type="email" id="email" name="email"
+                                                placeholder="Email"
+                                                value={this.state.email}
+                                                invalid={this.state.email}
+                                                onBlur={this.handleBlur("email")}
+                                                onChange={this.handleInputChange} />
+                                            <FormFeedback>{errors.email}</FormFeedback>
+                                            </Col>
+                                    </FormGroup>
+                                    <FormGroup row>
+                                        <Label htmlFor="contactReason"  md={12}>Why are you contacting us today?</Label>
+                                            <Col md={12}>
+                                                    <Input type="select" id="contactReason" name="contactReason"
+                                                    value={this.state.contactReason}
+                                                    onChange={this.handleInputChange}>
+                                                        <option>Cats</option>
+                                                        <option>Coffee</option>
+                                                </Input>    
+                                            </Col>
+                                    </FormGroup>
+                                    <FormGroup row>
+                                        <Label htmlFor="message" md={12}>Your Message</Label>
+                                            <Col md={12}>
+                                                <Input type="textarea" id="message" name="message"
+                                                value={this.state.message}
+                                                onChange={this.handleInputChange} />
+                                            </Col>
+                                    </FormGroup>
+                                    <FormGroup row>
+                                            <Col md={{size: 10, offset: 2}}>
+                                                <Button type="submit" color="primary">
+                                                    Send Message
+                                                </Button>
+                                            </Col>
+                                    </FormGroup>
+                                </Form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+        </React.Fragment>
         );
     }
 
